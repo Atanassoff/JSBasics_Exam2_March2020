@@ -1,0 +1,16 @@
+function demo(input){
+    let space = Number(input[0]);
+    let luggage = 0;
+    let i = 1;
+    let command = "";
+    while((command = input[i]) != "End"){
+        luggage = Number(command);
+        if(i % 3 == 0){luggage *= 1.1;}
+        space -= luggage;
+        if(space < 0){break;}
+        i++;
+    }
+    if(space >= 0){console.log(`Congratulations! All suitcases are loaded!`);}
+    else{console.log(`No more space!`);}
+    console.log(`Statistic: ${i - 1} suitcases loaded.`);
+}
