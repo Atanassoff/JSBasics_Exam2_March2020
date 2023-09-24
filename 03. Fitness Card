@@ -1,0 +1,87 @@
+function demo(input){
+    let money = Number(input[0]);
+    let mf = input[1];
+    let age = Number(input[2]);
+    let sport = input[3];
+    let price = 0;
+    switch(sport){
+        case"Gym":
+        switch(mf){
+            case"m":
+            price = 42;
+            break;
+            case"f":
+            price = 35;
+            break;
+            default:
+                break;
+        } 
+        break;
+        case"Boxing":
+        switch(mf){
+            case"m":
+            price = 41;
+            break;
+            case"f":
+            price = 37;
+            break;
+            default:
+                break;
+        } 
+        break;
+        case"Yoga":
+        switch(mf){
+            case"m":
+            price = 45;
+            break;
+            case"f":
+            price = 42;
+            break;
+            default:
+                break;
+        } 
+        break;
+        case"Zumba":
+        switch(mf){
+            case"m":
+            price = 34;
+            break;
+            case"f":
+            price = 31;
+            break;
+            default:
+                break;
+        } 
+        break;
+        case"Dances":
+        switch(mf){
+            case"m":
+            price = 51;
+            break;
+            case"f":
+            price = 53;
+            break;
+            default:
+                break;
+        } 
+        break;
+        case"Pilates":
+        switch(mf){
+            case"m":
+            price = 39;
+            break;
+            case"f":
+            price = 37;
+            break;
+            default:
+                break;
+        } 
+        break;
+        default:
+            break;
+    }
+    if(age <= 19){price *= 0.8;}
+    let diff = Math.abs(money - price);
+    if(money >= price){console.log(`You purchased a 1 month pass for ${sport}.`);}
+    else if(money < price){console.log(`You don't have enough money! You need $${diff.toFixed(2)} more.`);}
+}
