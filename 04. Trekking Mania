@@ -1,0 +1,19 @@
+function demo(input){
+    let num = Number(input[0]);
+    let group = 0;
+    let mu = 0; let mo = 0; let ki = 0; let k2 = 0; let ev = 0;
+    for(i = 1; i <= num; i++){
+        group = Number(input[i]);
+        if(group <= 5){ mu += group;}
+        else if(group <= 12){mo += group;}
+        else if(group <= 25){ki += group;}
+        else if(group <= 40){k2 += group;}
+        else if(group >= 41){ev += group;}
+    }
+    let people = mu + mo + ki + k2 + ev;
+    console.log(`${(mu / people * 100).toFixed(2)}%`);
+    console.log(`${(mo / people * 100).toFixed(2)}%`);
+    console.log(`${(ki / people * 100).toFixed(2)}%`);
+    console.log(`${(k2 / people * 100).toFixed(2)}%`);
+    console.log(`${(ev / people * 100).toFixed(2)}%`);
+}
