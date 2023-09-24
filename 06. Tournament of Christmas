@@ -1,0 +1,36 @@
+function demo(input){
+    let days = Number(input[0]);
+    let sport = ""; let result = "";
+    let points = 0; let pointsADay = 0;
+    let wins = 0; let losses = 0; let winDays = 0; lossDays = 0;
+    let i = 1;
+    for(j = 1; j <= days; j++){
+        while((sport = input[i]) != "Finish"){
+            i++;
+            result = input[i];
+            switch(result){
+                case"win":
+                pointsADay += 20;
+                wins++;
+                break;
+                case"lose":
+                losses++;
+                break;
+                default:
+                    break;
+            }
+            i++;
+        }
+        if(wins > losses){pointsADay *= 1.1; points += pointsADay; winDays++;}
+        else if(losses > wins){points += pointsADay; lossDays++;}
+        wins = 0; losses = 0; pointsADay = 0;
+        i++;
+    }
+    if(winDays > lossDays){
+        points *= 1.2;
+        console.log(`You won the tournament! Total raised money: ${points.toFixed(2)}`);
+    }
+    else{
+        console.log(`You lost the tournament! Total raised money: ${points.toFixed(2)}`);
+    }
+}
