@@ -1,0 +1,6 @@
+function demo(input){
+    let record = Number(input[0]);
+    let sec = Number(input[1]) * Number(input[2]) + Math.floor(Number(input[1]) / 50) * 30;
+    if(sec < record){console.log(`Yes! The new record is ${sec.toFixed(2)} seconds.`);}
+    else{console.log(`No! He was ${(sec - record).toFixed(2)} seconds slower.`)}
+}
