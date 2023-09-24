@@ -1,0 +1,8 @@
+function demo(input){
+    let min = Number(input[0]);
+    let times = Number(input[1]);
+    let cal = Number(input[2]);
+    let totalCal = min * times * 5;
+    if(cal / 2 <= totalCal){console.log(`Yes, the walk for your cat is enough. Burned calories per day: ${totalCal}.`)}
+    else{console.log(`No, the walk for your cat is not enough. Burned calories per day: ${totalCal}.`)}
+}
