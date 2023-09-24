@@ -1,0 +1,9 @@
+function demo(input){
+    let bit = Number(input[0]);
+    let yuan = Number(input[1]);
+    let comm = Number(input[2]);
+    let bitEu = bit * 1168 / 1.95;
+    let yuEu = yuan * 0.15 * 1.76 / 1.95;
+    let euro = (bitEu + yuEu) * ((100 - comm) / 100);
+    console.log(euro.toFixed(2)); 
+}
