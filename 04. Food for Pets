@@ -1,0 +1,26 @@
+function demo(input){
+    let num = Number(input[0]);
+    let food = Number(input[1]);
+    let biscuits = 0;
+    let dogsFood = 0; let catsFood = 0;
+    let totDogsFood = 0; let totCatsFood = 0;
+    let i = 1;
+    for(j = 1; j <= num; j++){
+        i++;
+        dogsFood = Number(input[i]);
+        i++;
+        catsFood = Number(input[i]);
+        if(j % 3 == 0){
+            biscuits += ((dogsFood + catsFood) * 0.1);
+        }
+        totDogsFood += dogsFood;
+        totCatsFood += catsFood;
+    }
+    console.log(`Total eaten biscuits: ${Math.round(biscuits)}gr.`);
+    let totPercent = (totDogsFood + totCatsFood) / food * 100;
+    let dogPercent = totDogsFood / (totDogsFood + totCatsFood) * 100;
+    let catPercent = totCatsFood / (totDogsFood + totCatsFood) * 100;
+    console.log(`${totPercent.toFixed(2)}% of the food has been eaten.`);
+    console.log(`${dogPercent.toFixed(2)}% eaten from the dog.`);
+    console.log(`${catPercent.toFixed(2)}% eaten from the cat.`);
+}
