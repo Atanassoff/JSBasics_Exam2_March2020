@@ -1,0 +1,13 @@
+function demo(input){
+    let kg = Number(input[0]);
+    let command = ""; 
+    let gr = 0;
+    let i = 1;
+    while((command = input[i]) != "Adopted"){
+        gr += Number(command);
+        i++;
+    }    
+    let diff = Math.abs(kg * 1000 - gr);
+    if((kg * 1000) >= gr){console.log(`Food is enough! Leftovers: ${diff} grams.`);}
+    else{console.log(`Food is not enough. You need ${diff} grams more.`);}
+}
